@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Forms</title>
+  <link href="./css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <form id="registration">
+    <div id="top"></div>
+    <h1>Registration Form</h1>
+
+    <div id="form">
+      <div>
+        <label for="email">
+          <img id="img-email" alt="email" src="./img/email.png"> 
+        </label>
+        <input id="email" type="email" name="email" placeholder="Email">
+      </div>
+
+      <div>
+        <label for="password">
+          <img alt="password" class="img-password" src="./img/password.png">
+        </label>
+        <input id="password" class="user" type="password" name="password" placeholder="Password">
+      </div>
+      <div>
+        <label for="retype">
+          <img alt="password" class="img-password" src="./img/password.png">
+        </label>
+        <input id="retype" class="user" type="password" name="retype" placeholder="Re-type Password">
+      </div>
+
+      <div class="names">
+        <div id="fn">
+          <label for="firstname">
+            <img alt="first name" class="img-user" src="./img/user.png">
+          </label>
+          <input id="firstname" type="text" name="first" placeholder="First Name">
+        </div>
+        <div id="ln">
+          <label for="lastname">
+            <img alt="last name" class="img-user" src="./img/user.png">
+          </label>
+          <input id="lastname" type="text" name="last" placeholder="Last Name"> 
+        </div>
+      </div>
+
+      <div id="sex">
+        <div id="div-male">
+          <input id="male" type="radio" name="sex" value="male">
+          <label class="" for="male">Male</label>
+        </div>
+        <div id="div-female">
+          <input id="female" type="radio" name="sex" value="female">
+          <label class="" for="female">Female</label>
+        </div>
+      </div>
+
+      <div>
+        <input id="country" type="text" list="countries" name="country" placeholder="Select a country">
+        <datalist id="countries">
+          <!-- options are added with JS-->
+        </datalist>
+      </div>
+
+      <div id="div-terms">
+        <input id="terms" type="checkbox" name="terms" value="yes">
+        <label for="terms">I agree with terms and conditions</label>
+      </div>
+
+      <div id="div-newsletter">
+        <input id="newsletter" type="checkbox" name="newsletter" value="yes">
+        <label for="newsletter">I want to receive the newsletter</label>
+      </div>
+
+      <div>
+        <input class='btn' type="submit" value="Register">
+        <input class='btn' type="reset" value="Reset">
+      </div>
+
+    </div>
+  </form>
+  <script src="./js/script.js"></script>
+</body>
+</html>

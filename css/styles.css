@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15vh;
+    height: 100vh;
+}
+
+form {
+    border: 2px solid grey;
+    border-radius: 5px;
+    width: 300px;
+}
+
+div#top {
+    background-color: rgb(255, 203, 16);
+    height: 20px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 1.5rem;
+    padding: 15px;
+    text-align: center;
+    /* border: 2px red solid; */
+}
+
+div {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+div#form {
+    display: flex;
+    flex-direction: column;
+    padding: 0 2% 2%;
+}
+
+div#form > div {
+    padding: 0 5px 10px 5px;
+}
+
+input {
+    display: inline-block;
+    height: 20px;
+    width: 100%;
+}
+
+label {
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    margin: 0;
+}
+
+img#img-email, img.img-password {
+    border: 1px solid grey;
+    height: auto;
+    width: 20px;
+    padding: 2.5px;
+}
+
+img.img-user {
+    border: 1px solid grey;
+    width: 20px;
+    padding: 0;
+}
+
+div.names {
+    display: flex;
+    justify-content: space-between;
+    gap: 3%;
+    width: 100%;
+}
+
+div#fn, div#ln {
+    border: none;   
+    padding: 0;
+}
+
+input#firstname, input#lastname {
+    width: 100%;    
+} 
+
+/* div#div-male, div#div-female  {
+    display: flex;
+    /* justify-content: space-around; */
+    /* gap: 1px; */
+    /* padding-left: 0px; */
+    /* border: 2px solid rebeccapurple; */
+/* } */ 
+
+div#sex {
+    gap: 3%
+}
+
+div#div-male, div#div-female {
+    display: flex;
+    align-items: center;
+}
+
+div#div-male input, div#div-female input {
+    margin-left: 4px;
+    margin-right: 5px;
+    height: 12.5px;
+    width: 12.5px;
+}
+
+div#div-male label, div#div-female label {
+    font-size: 0.9rem;
+}
+
+div#div-terms, div#div-newsletter {
+    display: flex;
+    align-items: center;
+}
+
+div#div-terms label, div#div-newsletter label {
+    font-size: 0.9rem;
+}
+
+div#div-terms input, div#div-newsletter input {
+    margin-right: 5px;
+    height: 12.5px;
+    width: 12.5px;
+}
+
+input.btn {
+    cursor: pointer;
+}
+
+table {
+    border-collapse: collapse;
+    table-layout: auto;
+    text-align: center;
+}
+
+th {
+    background-color: rgb(255, 203, 16);
+    border: 1px solid black;
+    font-weight: bold;
+    padding: 1vh;
+}
+
+td {
+    border: 1px solid black;
+    padding: 1vh;
+}
+
+
