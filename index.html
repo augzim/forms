@@ -16,20 +16,20 @@
         <label for="email">
           <img id="img-email" alt="email" src="./img/email.png"> 
         </label>
-        <input id="email" type="email" name="email" placeholder="Email">
+        <input id="email" type="email" name="email" placeholder="Email" required>
       </div>
 
       <div>
         <label for="password">
           <img alt="password" class="img-password" src="./img/password.png">
         </label>
-        <input id="password" class="user" type="password" name="password" placeholder="Password">
+        <input id="password" class="user" type="password" name="password" placeholder="Password" required>
       </div>
       <div>
         <label for="retype">
           <img alt="password" class="img-password" src="./img/password.png">
         </label>
-        <input id="retype" class="user" type="password" name="retype" placeholder="Re-type Password">
+        <input id="retype" class="user" type="password" name="retype" placeholder="Re-type Password" required>
       </div>
       <div id="error">
         <!-- place where error message will appear if error occur -->
@@ -40,29 +40,29 @@
           <label for="firstname">
             <img alt="first name" class="img-user" src="./img/user.png">
           </label>
-          <input id="firstname" type="text" name="first" placeholder="First Name">
+          <input id="firstname" type="text" name="first" placeholder="First Name" required>
         </div>
         <div id="ln">
           <label for="lastname">
             <img alt="last name" class="img-user" src="./img/user.png">
           </label>
-          <input id="lastname" type="text" name="last" placeholder="Last Name"> 
+          <input id="lastname" type="text" name="last" placeholder="Last Name" required> 
         </div>
       </div>
 
       <div id="sex">
         <div id="div-male">
-          <input id="male" type="radio" name="sex" value="male">
+          <input id="male" type="radio" name="sex" value="male" required>
           <label class="" for="male">Male</label>
         </div>
         <div id="div-female">
-          <input id="female" type="radio" name="sex" value="female">
+          <input id="female" type="radio" name="sex" value="female"> 
           <label class="" for="female">Female</label>
         </div>
       </div>
 
       <div>
-        <input id="country" type="text" list="countries" name="country" placeholder="Select a country">
+        <input id="country" type="text" list="countries" name="country" placeholder="Select a country" required>
         <datalist id="countries">
           <!-- options are added with JS-->
         </datalist>
