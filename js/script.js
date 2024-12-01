@@ -253,7 +253,22 @@ const countryList = [
 	"Åland Islands"
 ];
 
-const datalist = document.getElementById('countries');
+
+function checkRetypedPassword() {
+    const password = document.getElementById('password');
+    const retypedPassword = document.getElementById('retype');
+    const errorElement = document.getElementById('error');
+
+    if (password.value === retypedPassword.value) {
+        errorElement.style.display = 'none';
+        return true;
+    } else {
+        errorElement.style.display = 'block';
+        errorElement.textContent = 'Passwords do not match! Please try again.'
+        retypedPassword.focus();
+        return false;
+    }
+}
 
 
 function createTable(event) {
@@ -281,17 +296,21 @@ function createTable(event) {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    // add country options to a datalist
+    const datalist = document.getElementById('countries');
     countryList.forEach(country => {
         const optionElement = document.createElement('option');
         optionElement.value = country;
         datalist.appendChild(optionElement);
     });
 
+    // add submit-event listener for the form
     const form = document.getElementById('registration');
-
     form.addEventListener('submit', event => {
         event.preventDefault();
-        createTable(event);
+        if (checkRetypedPassword()) {
+            createTable(event);
+        }
     });
 });
 

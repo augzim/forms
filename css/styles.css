@@ -68,6 +68,12 @@ img#img-email, img.img-password {
     padding: 2.5px;
 }
 
+#error {
+    color: red;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
 img.img-user {
     border: 1px solid grey;
     width: 20px;
