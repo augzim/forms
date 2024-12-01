@@ -272,7 +272,12 @@ function checkRetypedPassword() {
 
 
 function createTable(event) {
-    const table = document.createElement('table');
+    // only one table is allowed on the page
+    let table = document.getElementById('table');
+    if (table !== null) {
+        table.remove();
+    } 
+    table = document.createElement('table');
     table.id = 'table';
     document.body.appendChild(table);
     table.innerHTML = `
