@@ -68,7 +68,7 @@ img#img-email, img.img-password {
     padding: 2.5px;
 }
 
-#error {
+div.error {
     color: red;
     font-size: 0.8rem;
     text-align: center;

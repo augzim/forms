@@ -254,10 +254,28 @@ const countryList = [
 ];
 
 
+function manipulateHiddenInput(checkboxElement, hiddenElementId, hiddenElementName, divElementId) {
+	let hiddenElement = document.getElementById(hiddenElementId);
+	if (checkboxElement.checked) {
+		hiddenElement.remove();
+	} else if (!document.getElementById(hiddenElementId)) {
+		hiddenElement = document.createElement('input');
+		hiddenElement.id = hiddenElementId;
+		hiddenElement.name = hiddenElementName;
+		hiddenElement.type = 'hidden';
+		hiddenElement.value = 'no';
+
+		const divElement = document.getElementById(divElementId);
+		const firstChild = divElement.firstChild;
+		divElement.insertBefore(hiddenElement, firstChild);
+	}
+}
+
+
 function checkRetypedPassword() {
     const password = document.getElementById('password');
     const retypedPassword = document.getElementById('retype');
-    const errorElement = document.getElementById('error');
+    const errorElement = document.getElementById('error-password');
 
     if (password.value === retypedPassword.value) {
         errorElement.style.display = 'none';
@@ -266,6 +284,22 @@ function checkRetypedPassword() {
         errorElement.style.display = 'block';
         errorElement.textContent = 'Passwords do not match! Please try again.'
         retypedPassword.focus();
+        return false;
+    }
+}
+
+
+function checkCountry() {
+    const country = document.getElementById('country');
+    const errorElement = document.getElementById('error-password');
+
+    if (countryList.includes(country.value)) {
+        errorElement.style.display = 'none';
+        return true;
+    } else {
+        errorElement.style.display = 'block';
+        errorElement.textContent = 'Country must be chosen from the list! Please try again.'
+        country.focus();
         return false;
     }
 }
@@ -309,13 +343,22 @@ document.addEventListener('DOMContentLoaded', () => {
         datalist.appendChild(optionElement);
     });
 
+	// make checkbox name-value pair be in the table regardless of the user's choice (checked or not)
+	const checkboxes = [
+		['terms', 'terms-hidden', 'terms', 'div-terms'], 
+		['newsletter', 'newsletter-hidden', 'newsletter', 'div-newsletter']
+	];
+	for (const [checkboxId, hiddenElementId, hiddenElementName, divElementId] of checkboxes) {
+		document.getElementById(checkboxId).addEventListener('change', event =>
+			manipulateHiddenInput(event.target, hiddenElementId, hiddenElementName, divElementId));
+	}
+
     // add submit-event listener for the form
     const form = document.getElementById('registration');
     form.addEventListener('submit', event => {
         event.preventDefault();
-        if (checkRetypedPassword()) {
+        if (checkRetypedPassword() && checkCountry()) {
             createTable(event);
         }
     });
 });
-

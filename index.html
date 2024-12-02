@@ -31,7 +31,7 @@
         </label>
         <input id="retype" class="user" type="password" name="retype" placeholder="Re-type Password" required>
       </div>
-      <div id="error">
+      <div id="error-password" class="error">
         <!-- place where error message will appear if error occur -->
       </div>
 
@@ -67,13 +67,18 @@
           <!-- options are added with JS-->
         </datalist>
       </div>
+      <div id="error-country" class="error">
+        <!-- place where error message will appear if error occur -->
+      </div>
 
       <div id="div-terms">
+        <input id="terms-hidden" type="hidden" name="terms" value="no">
         <input id="terms" type="checkbox" name="terms" value="yes">
         <label for="terms">I agree with terms and conditions</label>
       </div>
 
       <div id="div-newsletter">
+        <input id="newsletter-hidden" type="hidden" name="newsletter" value="no">
         <input id="newsletter" type="checkbox" name="newsletter" value="yes">
         <label for="newsletter">I want to receive the newsletter</label>
       </div>
